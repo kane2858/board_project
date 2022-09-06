@@ -1,0 +1,77 @@
+@charset "UTF-8";
+.joininfofree{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    cursor: default;
+}
+.infoname{
+     font-size: xx-large;
+    background-color: rgb(63, 114, 175);
+    height: 40px;
+    color:white;
+    margin: 10px;
+    cursor: default;
+    text-align: center;
+    line-height: 40px;
+}
+.writeinfo{
+    text-align: center;
+    width: 70%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid  rgb(73, 84, 100);
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.writeinfo .inforow{
+    /* border: 1px solid blue; */
+    margin: 5px;
+}
+.writeinfo label{
+    font-family: 'EliceDigitalBaeum_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-size: large;
+}
+.inforow input{
+    width: 400px;
+    height: 30px;
+}
+/* #us_info{
+    width:  400px;
+    height: 30px;
+    margin-bottom: 20px;
+} */
+.inputinfobtn{
+    border: 1px solid transparent;
+    background-color: rgb(73, 84, 100);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-family: 'ChosunGu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    width: 80px;
+    height: 25px;
+    margin: 10px auto;
+}
+.infonextbtn button{
+    width: 90px;
+    height: 30px;
+    float: right;
+}
+.infonextbtn p{
+    font-size: large;
+}
+
+.id_input{
+	display:none;
+}
+.id_input2{
+	display:none;
+}

@@ -1,0 +1,64 @@
+@charset "UTF-8";
+.header{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(232, 232, 232);
+}
+.headerup{
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+}
+.headerlogo{
+    float: left;
+    width: 50%;
+}
+.headerlogo img{
+    float: left;
+    margin: 20px 20px;
+    width:30%;
+}
+.headerupright{
+    width: 50%;
+    margin: auto 10px;
+}
+.headerupright input{
+    margin:  20px 10px 20px 50px;
+    float: left;
+    width: 250px;
+    height: 35px;
+}
+.headerupright button{
+    float: right;
+    margin: 20px;
+    width: 120px;
+    height: 40px;
+    font-size:x-large;
+}
+.headerdown{
+    display: flex;
+    flex-direction:row;
+    width: 80%;
+    margin: 8px auto;
+}
+.headerdownleft{
+    margin: 10px auto;
+    width: 80%;
+}
+.headerdownleft a{
+    float: left;
+    margin: 0 20px ;
+    font-size: x-large;
+}
+.headerdownright{
+    float: right;
+    width: 50%;
+}
+.headerdownright a{
+    float: right;
+    font-size: larger;
+    /* color: white; */
+    margin: 15px 120px;
+}

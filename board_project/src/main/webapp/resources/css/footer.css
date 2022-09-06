@@ -1,0 +1,18 @@
+@charset "UTF-8";
+.footerline{
+    width: 100%;
+    border: 1px solid rgb(232,232,232);
+    margin: 10px 0;
+}
+.footer{
+    text-align: center;
+    cursor: default;
+}
+.footercontent{
+    font-size: medium;
+    margin: 20px;
+}
+.footerend{
+    margin: 50px 0;
+    font-size: small;
+}

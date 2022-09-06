@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.projectjoin{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    cursor: default;
+}
+.projectjoinname{
+    font-size: xx-large;
+    background-color: rgb(63, 114, 175);
+    height: 45px;
+    color:white;
+    margin: 10px;
+    cursor: default;
+    text-align: center;
+    line-height: 45px;
+}
+.projectjoinstatus p, .projectjoinstatus a{
+	font-size:16px;
+	margin:10px;
+}
+.projectjoinstatus:hover{
+	color:blue;
+}
+.projectjoin_division{
+    width: 30%;
+    height: 1px;
+    background-color: gray;
+    margin: 40px auto;
+}
+.projectjoincontent{
+    width: 80%;
+    margin: 20px auto;
+}
+.projectjoin_top{
+    text-align: center;
+    font-size: 30px;
+}
+.project_title{
+    margin: 20px 0;
+}
+.projectjoin_bottom{
+    border: 1px solid black;
+    text-align: center;
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+}
+.projectjoin_resumes{
+    width: 70%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    
+}
+.projectjoin_resumechoice{
+    margin: 0 20px;
+}
+.projectjoin_resumelist{
+    font-size: 25px;
+    margin: 10px 0;
+}
+.projectjoin_resume, .projectjoin_name{
+    font-size: 18px;
+    margin: 3px 0;
+    
+}
+.projectjoinbutton{
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+.projectjoinbtn{
+    margin: 10px;
+    width: 180px;
+    height: 30px;
+    font-size: 20px;
+}

@@ -1,0 +1,170 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'EliceDigitalBaeum_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'EliceDigitalBaeum_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DOSMyungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/DOSMyungjo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SUIT-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cafe24SsurroundAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.fontimportant{
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.fontimportant2{
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fontname{
+    font-family: 'EliceDigitalBaeum_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+.fontname2{
+        font-family: 'SDSamliphopangche_Outline';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+}
+.fontcontent{
+        font-family: 'EliceDigitalBaeum_Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+}
+.fonthighlight{
+    font-family: 'DOSMyungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/DOSMyungjo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.fontcontent2{
+    font-family: 'SUIT-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+.fontnothing{
+        font-family: 'ChosunGu';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+}
+.fontnothing2{
+        font-family: 'Cafe24SsurroundAir';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+}
+
+.btn1{
+    border: 1px solid transparent;
+    background-color: rgb(219, 226, 239);
+    border-radius: 30px;
+    cursor: pointer;
+}
+.btn2{
+    border: 1px solid transparent;
+    background-color: rgb(17, 45, 78);
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+}
+.btn3{
+    border: 1px solid transparent;
+    background-color: rgb(187, 191, 202);
+    border-radius: 30px;
+    cursor: pointer;
+}
+.btn4{
+    border: 1px solid transparent;
+    background-color: rgb(73, 84, 100);
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+}
+.btn5{
+    border: 1px solid transparent;
+    background-color: rgb(146, 180, 236);
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+}
+.btn6{
+    border: 1px solid transparent;
+    background-color: rgb(255, 210, 77);
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+}
+.btn7{
+    border: 1px solid transparent;
+    background-color: rgb(255, 230, 154);
+    border-radius: 30px;
+    cursor: pointer;
+}
+.btn8{
+    border: 1px solid transparent;
+    background-color: rgb(63, 114, 175);
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+}
+.btnwhite{
+    border: 1px solid transparent;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    cursor: pointer;
+}

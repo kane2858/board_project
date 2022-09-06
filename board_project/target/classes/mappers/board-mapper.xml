@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="board">
+	
+	<resultMap type="Board" id="BoardRecomment">
+		<id property="b_no" column="b_no" />
+		<result property="b_title" column="b_title"/>
+		<result property="b_content" column="b_content"/>
+		<result property="m_id" column="m_id"/>
+		<result property="m_name" column="m_name"/>
+		<result property="b_date" column="b_date"/>
+		<result property="b_count" column="b_count"/>
+		<result property="k_no" column="k_no"/>
+		<collection property="list_recomment" select="list_recomment" column="{b_no = b_no}"></collection>
+		<collection property="list_fileinfo" select="list_fileinfo" column="{b_no = b_no}"></collection>
+	</resultMap>
+
+	<select id="selectBoardRecommentDetail" resultMap="BoardRecomment" >
+		select b_no, b_title, b_content, k_title, k_no, m_id, m_name, to_char(b_date, 'yyyy-mm-dd hh24:mi') b_date, b_count from board left join kind using(k_no) left join member using(m_id) where b_no = #{b_no}
+	</select>
+	
+	<select id="list_recomment" resultType="Recomment">
+		select * from recomment left join member using(m_id) where b_no = #{b_no}
+	</select>
+	
+	<select id="list_fileinfo" resultType="Fileinfo" >
+		select * from fileinfo left join board using(b_no) left join member using(m_id) where b_no = #{b_no}
+	</select>
+	
+	<select id="selectKind" resultType="map">
+		select * from kind
+	</select>
+	
+	<select id="selectBoardList" resultType="map" parameterType="map">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) f_count, r_count from (select rownum rnum, a.* from (select * from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) left join (select nvl(count(*),0) r_count, b_no from recomment group by b_no) using(b_no) order by b_no desc) a) where rnum between #{startRnum} and #{endRnum}
+	</select>
+	
+	<select id="selectMaxBNo" resultType="_int">
+		select nvl(max(b_no),0)+1 from board
+	</select>
+	
+	<insert id="insertBoard" parameterType="map">
+		insert all
+		into board values(#{b_no}, #{b_title}, #{b_content}, #{m_id}, sysdate, default, #{k_no})
+		<if test="files != null">
+			<foreach collection="files" item="files" index="i">
+				into fileinfo values((select nvl(max(f_no), 0)+1+#{i} from fileinfo), #{files.f_realname}, #{files.f_newname}, #{files.f_path}, #{b_no})
+			</foreach>
+		</if>
+		select * from dual
+	</insert>
+	
+	<select id="selectdetail" parameterType="String" resultType="map">
+		select b_no, b_title, b_content, k_title, k_no, m_id, m_name, to_char(b_date, 'yyyy-mm-dd hh24:mi') b_date, f_realname, f_newname, f_path, b_count from board left join kind using(k_no) left join member using(m_id) left join fileinfo using(b_no) where b_no = #{b_no}
+	</select>
+	
+	<select id="selectdetailRecomment" parameterType="String" resultType="map">
+		select m_id, m_name, r_no, b_no, r_content, r_useyn, to_char(r_date, 'yyyy-mm-dd hh24:mi') r_date, r_depth from recomment left join member using(m_id) where b_no = #{b_no} order by r_pno , r_gno desc
+	</select>
+	
+	<update id="updateBoard">
+		update board set b_title = #{b_title}, b_content = #{b_content} where b_no = #{b_no}
+	</update>
+	
+	<insert id="updateBoardFile" parameterType="map">
+		insert all
+		<foreach collection="files" item="files" index="i">
+		into fileinfo values((select nvl(max(f_no), 0)+1+#{i} from fileinfo), #{files.f_realname}, #{files.f_newname}, #{files.f_path}, #{b_no})	
+		</foreach>
+		select * from dual
+	</insert>
+	
+	<delete id="deleteBoard">
+		delete from board where b_no = #{b_no}
+	</delete>
+	
+	<select id="totalCnt" resultType="_int">
+		select count(*) from board
+	</select>
+	
+	<select id="totalCntKind" resultType="_int">
+		select count(*) from board where k_no = #{k_no}
+	</select>
+	
+	<select id="totalCntSearch" parameterType="map" resultType="_int">
+		<if test="s_title == '제목'">
+		select count(*) from board where b_title like '%'||#{s_content}||'%'
+		</if>
+		<if test="s_title == '내용'">
+		select count(*) from board where b_content like '%'||#{s_content}||'%'
+		</if>
+		<if test="s_title == '작성자'">
+		select count(*) from board left join member using(m_id) where m_name = #{s_content}
+		</if>
+	</select>
+	
+	<select id="totalCntKindSearch" parameterType="map" resultType="_int">
+		<if test="s_title == '제목'">
+		select count(*) from board where b_title like '%'||#{s_content}||'%' and k_no = #{k_no}
+		</if>
+		<if test="s_title == '내용'">
+		select count(*) from board where b_content like '%'||#{s_content}||'%' and k_no = #{k_no}
+		</if>
+		<if test="s_title == '작성자'">
+		select count(*) from board left join member using(m_id) where m_name = #{s_content} and k_no = #{k_no}
+		</if>
+	</select>
+	
+	<select id="selectBoardListKind" resultType="map" parameterType="map">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) f_count, r_count from (select rownum rnum, a.* from (select * from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) left join (select nvl(count(*),0) r_count, b_no from recomment group by b_no) using(b_no) where k_no = #{k_no} order by b_no desc) a) where rnum between #{startRnum} and #{endRnum}
+	</select>
+	
+	<select id="selectBoardListSearch" resultType="map" parameterType="map">
+		<if test="s_title == '제목'">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) f_count, r_count from (select rownum rnum, a.* from (select * from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) left join (select nvl(count(*),0) r_count, b_no from recomment group by b_no) using(b_no) where b_title like '%'||#{s_content}||'%' order by b_no desc) a) where rnum between #{startRnum} and #{endRnum}
+		</if>
+		<if test="s_title == '내용'">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) f_count, r_count from (select rownum rnum, a.* from (select * from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) left join (select nvl(count(*),0) r_count, b_no from recomment group by b_no) using(b_no) where b_content like '%'||#{s_content}||'%' order by b_no desc) a) where rnum between #{startRnum} and #{endRnum}
+		</if>
+		<if test="s_title == '작성자'">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) f_count, r_count from (select rownum rnum, a.* from (select * from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) left join (select nvl(count(*),0) r_count, b_no from recomment group by b_no) using(b_no) where m_name = #{s_content} order by b_no desc) a) where rnum between #{startRnum} and #{endRnum}
+		</if>
+	</select>
+	
+	<select id="selectBoardListKindSearch" resultType="map" parameterType="map">
+		<if test="s_title == '제목'">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) f_count, r_count from (select rownum rnum, a.* from (select * from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) left join (select nvl(count(*),0) r_count, b_no from recomment group by b_no) using(b_no) where b_title like '%'||#{s_content}||'%' and k_no = #{k_no} order by b_no desc) a) where rnum between #{startRnum} and #{endRnum}
+		</if>
+		<if test="s_title == '내용'">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) f_count, r_count from (select rownum rnum, a.* from (select * from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) left join (select nvl(count(*),0) r_count, b_no from recomment group by b_no) using(b_no) where b_content like '%'||#{s_content}||'%' and k_no = #{k_no} order by b_no desc) a) where rnum between #{startRnum} and #{endRnum}
+		</if>
+		<if test="s_title == '작성자'">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) f_count, r_count from (select rownum rnum, a.* from (select * from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) left join (select nvl(count(*),0) r_count, b_no from recomment group by b_no) using(b_no) where m_name = #{s_content} and k_no = #{k_no} order by b_no desc) a) where rnum between #{startRnum} and #{endRnum}
+		</if>
+	</select>
+	
+	<update id="updateCount">
+		update board set b_count= b_count+1 where b_no = #{b_no}
+	</update>
+	
+	<insert id="recommentWrite" parameterType="map">
+		insert into recomment values((select nvl(max(r_no), 0)+1 from recomment), #{b_no}, #{r_content}, #{m_id}, sysdate, (select nvl(max(r_no), 0)+1 from recomment), 0, 0, 'Y')
+	</insert>
+	
+	<update id="recommentDelete" parameterType="String">
+		update recomment set r_useyn = 'N' where r_no = #{r_no}
+	</update>
+	
+	<select id="selectRGno" resultType="map">
+		select r_pno, r_gno, r_pno, r_depth from recomment where r_no = #{r_no}
+	</select>
+
+	<update id="updateRGno" parameterType="map">
+		update recomment set r_gno = r_gno+1 where r_pno = #{R_PNO} and r_gno >= #{R_GNO}
+	</update>
+	
+	<insert id="insertRerecomment" parameterType="map">
+		insert into recomment values((select nvl(max(r_no), 0)+1 from recomment), #{b_no}, #{r_content}, #{m_id}, sysdate, #{R_PNO}, ${R_DEPTH}+1, #{R_GNO}, 'Y')
+	</insert>
+	
+	<select id="poiExcel" resultType="map">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) order by b_no desc
+	</select>
+	
+	<select id="poiExcelKind" parameterType="map" resultType="map">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) where k_no = #{k_no} order by b_no desc
+	</select>
+	
+	<select id="poiExcelSearch" parameterType="map" resultType="map">
+		<if test="s_title == '제목'">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) where b_title like '%'||#{s_content}||'%' order by b_no desc
+		</if>
+		<if test="s_title == '내용'">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) where b_content like '%'||#{s_content}||'%' order by b_no desc
+		</if>
+		<if test="s_title == '작성자'">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) where m_name = #{s_content} order by b_no desc
+		</if>
+	</select>
+	
+	<select id="poiExcelKindSearch" parameterType="map" resultType="map">
+		<if test="s_title == '제목'">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) where b_title like '%'||#{s_content}||'%' and k_no = #{k_no} order by b_no desc
+		</if>
+		<if test="s_title == '내용'">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) where b_content like '%'||#{s_content}||'%' and k_no = #{k_no} order by b_no desc
+		</if>
+		<if test="s_title == '작성자'">
+		select m_id, m_name, b_no, b_title, b_content, to_char(b_date, 'yyyy/mm/dd') b_date, b_count, k_no, k_title, nvl(f_count, 0) from board left join member using(m_id) left join kind using(k_no) left join (select count(*) f_count, b_no from fileinfo group by b_no) using(b_no) where m_name = #{s_content} and k_no = #{k_no} order by b_no desc
+		</if>
+	</select>
+	
+	<delete id="fileRemove" parameterType="String">
+		delete from fileinfo where f_newname = #{file_name}
+	</delete>
+	
+</mapper>

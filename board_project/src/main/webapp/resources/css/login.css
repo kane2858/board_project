@@ -1,0 +1,67 @@
+@charset "UTF-8";
+.login{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+}
+.loginname{
+    font-size: xx-large;
+    background-color:rgb(214, 217, 228);
+    margin: 10px;
+    cursor: default;
+}
+.logincontent{
+    width: 20%;
+    margin: 10px auto;
+    text-align: center;
+}
+.loginlabel{
+    font-size: large;
+    margin: 10px;
+}
+.inputlogin{
+    width: 200px;
+    height: 23px;
+    margin: 10px;
+}
+.logincontent2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: right;
+}
+.logincontent2 a{
+    font-family: 'SUIT-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    margin: 2px;
+}
+.logincontent2 a:hover{
+    color: blue;
+}
+.loginbutton{
+    width: 40%;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+}
+.loginbtn{
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    height: 40px;
+    font-family: 'ChosunGu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight:bolder;
+    font-style: normal;
+}
+.logindivision{
+    width: 400px;
+    height: 2px;
+    margin: 10px auto;
+    background-color: gray;
+    
+}

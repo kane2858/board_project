@@ -1,0 +1,86 @@
+@charset "UTF-8";
+.insertproject{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    cursor: default;
+}
+.insertprojectname{
+    font-size: xx-large;
+    background-color: rgb(63, 114, 175);
+    height: 45px;
+    color:white;
+    margin: 10px;
+    cursor: default;
+    text-align: center;
+    line-height: 45px;
+}
+.project_insert{
+    width: 90%;
+    margin: 20px auto;
+}
+#re_type{
+    width: 200px;
+    height: 30px;
+    margin: 0 10px;
+    font-size: 15px;
+    font-family: 'EliceDigitalBaeum_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+#pro_title{
+    width: 500px;
+    height: 40px;
+    margin: 30px 10px;
+    font-family: 'EliceDigitalBaeum_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+
+}
+#pro_content{
+    margin: 10px;
+    width: 500px;
+    height: 30px;
+    font-family: 'EliceDigitalBaeum_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+#pro_img{
+    width: 500px;
+    height: 30px;
+    margin: 10px 0;
+    font-size: 18px;
+    font-family: 'EliceDigitalBaeum_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+#pro_budget, #pro_period, #pro_personnel{
+    width: 300px;
+    height: 30px;
+    margin: 10px 0;
+    font-family: 'EliceDigitalBaeum_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+.insertprojectp{
+    font-size: 23px;
+}
+.projectinsertbutton{
+    text-align: center;
+    margin: 20px;
+}
+.projectinsertbtn{
+    height:50px;
+    width: 160px;
+    font-size: 20px;
+    font-family: 'Cafe24SsurroundAir';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+}

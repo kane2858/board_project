@@ -1,0 +1,61 @@
+@charset "UTF-8";
+.join{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+}
+.joincontent{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height:600px;
+    margin: 20px auto;
+    text-align: center;
+    align-items:  center;
+}
+.joinleft{
+    width: 50%;
+    height: 100%;
+}
+.joinleft .joinleftimg{
+    margin: 150px 0;
+}
+.joinleftbtn button{
+  width: 200px;
+  height: 30px;
+  font-size: larger;
+}
+.joindivision{
+    width: 2px;
+    height: 100%;
+    background-color: gray;
+}
+.joinright{
+    width: 50%;
+    height: 100%;
+}
+.joinright .joinrightimg{
+    margin: 140px 0;
+}
+.joinrightbtn button{
+    width: 200px;
+    height: 30px;
+    font-size: larger;
+}
+.joinrightbtn button:hover{
+   background-color: rgb(114, 153, 201);
+}
+.joinleftbtn button:hover{
+   background-color: rgb(114, 153, 201);
+}
+.joinbottom{
+    width: 100%;
+    margin: 30px;
+    float: left;
+    text-align: center;
+    font-size: x-large;
+}
+.joinbottom:hover{
+    text-decoration: underline;
+}

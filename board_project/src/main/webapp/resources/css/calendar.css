@@ -1,0 +1,32 @@
+@charset "UTF-8";
+a{
+    text-decoration: none !important;
+    color: black !important;
+}
+a:hover {
+    color: #0a58ca !important;
+}
+#calendar_wrap{
+	display: flex; 
+}
+#side_wrap{
+	padding: 30px;
+	width: 350px;   
+}
+#pmlist_table{
+	margin: 20px;
+}
+#selectname{
+	margin: 20px;
+	font-size: 20px;
+	font-family: 'SUIT-Medium';  
+}
+#pmlist_table{
+	font-family: 'SUIT-Medium';  
+	font-size: 18px;
+}
+#pro_no{
+	font-family: 'SUIT-Medium'; 
+}
+
+

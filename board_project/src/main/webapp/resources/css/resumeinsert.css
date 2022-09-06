@@ -1,0 +1,85 @@
+@charset "UTF-8";
+.resume{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+}
+.resumename{
+    font-size: xx-large;
+    background-color: rgb(117, 117, 117);
+    height: 48px;
+    color:white;
+    margin: 15px;
+    cursor: default;
+    text-align: center;
+    line-height: 45px;
+}
+.resumecontent{
+    width: 80%;
+    margin: 20px auto;
+}
+.resumedivision{
+    width: 75%;
+    height:2px;
+    margin: 0 auto;
+    background-color: rgb(203, 203, 203);
+}
+.resumepart{
+    width: 80%;
+    margin: 20px auto;
+}
+.resumemiddlename{
+    font-size: 40px;
+    margin: 10px 20px;
+    color: rgb(88, 88, 88);
+}
+.resumepart input{
+    border: none;
+    border-bottom: 1px solid black;
+}
+.resumelabel{
+    margin: 10px 20px;
+    font-size: 22px;
+    font-family: 'SUIT-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+.resumeinput{
+    font-size: 18px;
+    margin: 10px;
+    font-family: 'ChosunGu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    width: 300px;
+    height: 40px;
+}
+.resumebutton{
+    width: 50%;
+
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.resumbtn{
+    height: 35px;
+    font-family: 'Cafe24SsurroundAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-size: 15px;
+}
+
+<!-- -->
+
+#re_certi_hidden1, #re_certi_hidden2, #re_career_hidden1, #re_career_hidden2{
+	display:none;
+}
+#pluscerti, #pluscareer, #minuscareer, #minuscerti{
+	width:100px;
+	height:20px;
+	margin: 10px 30px;
+}

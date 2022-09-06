@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.aduserapprov{
+    width: 80%;
+    margin: 20px auto;
+}
+.aduserapprovename{
+    font-size: 30px;
+    text-align: center;
+    margin: 20px;
+}
+.aduserapprovelistcontent{
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+.listofaduserapprove{
+    width: 100%;
+}
+.aduserapprovelist{
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+.aduserapprovelist_line td{
+	border-bottom:1px solid rgb(245,245,245);
+    margin: 20px auto;
+    font-size: 14px;
+}
+.aduserapprovelistbtn{
+    font-size: 15px;
+    font-family: 'Cafe24SsurroundAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

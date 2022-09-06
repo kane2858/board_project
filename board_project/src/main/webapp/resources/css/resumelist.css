@@ -1,0 +1,77 @@
+@charset "UTF-8";
+.resumelist {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    cursor: default;
+}
+
+.resumelistname {
+    font-size: xx-large;
+    background-color: rgb(255, 210, 77);
+    height: 50px;
+    color: black;
+    margin: 10px;
+    cursor: default;
+    text-align: center;
+    line-height: 50px;
+}
+
+.resumelistcontent {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.listofresume {
+    width: 90%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.resumelist_thead {
+    border-bottom: 3px solid gray;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.resumelist_line td {
+    border-bottom: 1px solid lightblue;
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.resumelist_no {
+    width: 40px;
+}
+
+.resumelist_title {
+    width: 760px;
+}
+
+.resumelist_condition {
+    width: 200px;
+}
+
+.resumelist_openYN {
+    width: 120px;
+}
+
+.resumelist_titlelink a:hover {
+    color:  rgb(64, 144, 250);
+}
+.resumelistbutton{
+    width: 90%;
+    margin:50px;
+    text-align: right;
+}
+.resumelistinsertbtn{
+    width: 150px;
+    height: 40px;
+}
+.resumelistinsertbtn p{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	<typeAliases>
+		<!-- <typeAlias type="fin.spring.projob.prouser.vo.Prouser" alias="Prouser"/> -->
+		<typeAlias type="com.first.board.board.vo.BoardVo" alias="Board"/>
+		<typeAlias type="com.first.board.board.vo.RecommentVo" alias="Recomment"/>
+		<typeAlias type="com.first.board.board.vo.FileinfoVo" alias="Fileinfo"/>
+	</typeAliases>
+	<mappers>
+		<!-- <mapper resource="mappers/prouser-mapper.xml"/> -->
+		<mapper resource="mappers/join-mapper.xml"/>
+		<mapper resource="mappers/login-mapper.xml"/>
+		<mapper resource="mappers/board-mapper.xml"/>
+	</mappers>
+</configuration>

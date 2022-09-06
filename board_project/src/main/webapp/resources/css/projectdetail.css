@@ -1,0 +1,75 @@
+@charset "UTF-8";
+.projectdeatil{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    cursor: default;
+}
+.projectdeatilname{
+    font-size: xx-large;
+    background-color: rgb(63, 114, 175);
+    height: 45px;
+    color:white;
+    margin: 10px;
+    cursor: default;
+    text-align: center;
+    line-height: 45px;
+}
+.projectdetailcontent{
+    width: 90%;
+    margin: 10px auto;
+}
+.pro_detail_top{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    
+}
+.pro_detail_top p{
+    margin: 10px;
+}
+.pro_detail_cate{
+    font-size: 28px;
+    line-height: normal;
+}
+.pro_detail_title{
+    font-size: 35px;
+}
+.pro_detail_middle{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    width: 92%;
+    margin: 20px auto;
+}
+.pro_detail_middle p{
+    font-size: 20px;
+    margin: 5px 15px;
+}
+.pro_detail_bottom{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 20px auto;
+}
+.pro_detail_budget, .pro_detail_period, .pro_detail_personnel{
+    font-size: 22px;
+    margin: 10px auto;
+}
+.projectdetailbutton{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    margin: 20px auto;
+}
+.projectdetailbtn{
+    width: 180px;
+    height: 30px;
+    margin: 10px auto;
+}
+.projectdetailbtn p{
+    font-size: 20px;
+    
+}

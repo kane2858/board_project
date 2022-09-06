@@ -1,0 +1,113 @@
+@charset "UTF-8";
+.mypagefree{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    cursor: default;
+}
+.mypagefreename{
+    font-size: xx-large;
+    background-color: rgb(63, 114, 175);
+    height: 40px;
+    color:white;
+    margin: 10px;
+    cursor: default;
+    text-align: center;
+    line-height: 40px;
+}
+.mypagetop{
+    display: flex;
+    flex-direction: row;
+}
+.mypagetopleft{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 40%;
+    margin: 20px 0;
+    height: 250px;
+}
+.mypageinfo{
+    margin: 10px;
+    font-size: 30px;
+}
+.mypageinfobtn{
+    margin: 20px;
+}
+.mypageinfobtn button{
+    height: 30px;
+    width: 200px;
+}
+.mypageinfobtn p{
+    font-size: 20px;
+    line-height: 20px;
+}
+.mypagetopright{
+    width: 58%;
+    height: 250px;
+    margin: 20px 0;
+    border-left: 4px solid  rgb(187, 191, 202);
+
+}
+.my_myproject{
+    margin: 20px;
+}
+.my_myproject p{
+    font-size: 25px;
+    margin: 35px 0;
+}
+.my_myprojectcoo button{
+    width: 120px;
+    height: 40px;
+    margin: 40px 20px;
+    float: right;
+}  
+.my_myprojectcoo button p{
+    font-size: 18px;
+} 
+.mypagebottom{
+    display: flex;
+    flex-direction: row;
+}
+.mypagebottomleft{
+    
+    width: 45%;
+    margin: 20px 20px;
+}
+.my_project_ing_name{
+    margin: 10px;
+}
+.my_project_ing_name p{
+    font-size: 20px;
+}
+.mypagebottomright{
+    width: 45%;
+    margin: 20px 20px;
+}
+.my_project_cancel{
+	background-color:gray;
+	
+	width:50%;
+}
+.cancela{
+	color:white;
+}
+.my_project_yet, .my_project_ing{
+	display:flex;
+	flex-direction:column;	
+	cursor:pointer;
+	margin:20px;
+}
+.my_project_yet a:hover{
+	text-decoration:underline;
+}
+.my_project_ing a:hover{
+	text-decoration:underline;
+}
+.my_project_yet_name{
+    margin: 10px;
+}
+.my_project_yet_name p{
+    font-size: 20px;
+}

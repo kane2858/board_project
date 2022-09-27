@@ -263,9 +263,7 @@ public class BoardController {
 		map.put("b_no", b_no);
 		int result = service.updateBoard(map);
 		if(result > 0) {
-			if(files.isEmpty()) {
-				service.updateBoardFile(map);
-			}
+			service.updateBoardFile(map);
 			rttr.addFlashAttribute("msg", "수정하였습니다");
 		} else {
 			rttr.addFlashAttribute("msg", "수정실패했습니다");

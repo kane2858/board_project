@@ -20,7 +20,7 @@
 	</select>
 	
 	<select id="list_recomment" resultType="Recomment">
-		select * from recomment left join member using(m_id) where b_no = #{b_no}
+		select * from recomment left join member using(m_id) where b_no = #{b_no} order by r_pno, r_gno desc
 	</select>
 	
 	<select id="list_fileinfo" resultType="Fileinfo" >
@@ -55,7 +55,7 @@
 	</select>
 	
 	<select id="selectdetailRecomment" parameterType="String" resultType="map">
-		select m_id, m_name, r_no, b_no, r_content, r_useyn, to_char(r_date, 'yyyy-mm-dd hh24:mi') r_date, r_depth from recomment left join member using(m_id) where b_no = #{b_no} order by r_pno , r_gno desc
+		select m_id, m_name, r_no, b_no, r_content, r_useyn, to_char(r_date, 'yyyy-mm-dd hh24:mi') r_date, r_depth from recomment left join member using(m_id) where b_no = #{b_no} order by r_pno, r_gno desc
 	</select>
 	
 	<update id="updateBoard">
